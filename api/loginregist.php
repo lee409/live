@@ -32,6 +32,10 @@ class loginregistControl extends hsshopControl {
 		$this->output_success_json('查询成功', 0);
 	}
 	
+	public function homedataOp() {
+		$this->output_success_json('查询成功', 0);
+	}
+	
 	/**
 	 * 验证密码
 	 */

@@ -836,3 +836,20 @@
 <?php exit;?>09-06 11:14:19 | 2 | set_error_handler() expects the argument (loginregistControl::errorHandler) to be a valid callback | api/control.php | 57
 <?php exit;?>09-06 11:14:19 | 2 | Missing argument 1 for Control::data(), called in /Applications/XAMPP/xamppfiles/htdocs/live_demo/api/loginregist.php on line 41 and defined | api/control.php | 42
 <?php exit;?>09-06 11:14:19 | 2 | Missing argument 1 for Control::data(), called in /Applications/XAMPP/xamppfiles/htdocs/live_demo/api/loginregist.php on line 41 and defined | api/control.php | 42
+<?php exit;?>09-07 18:38:26 | 2 | chmod(): Operation not permitted | phpcms/libs/classes/template_cache.class.php | 43
+<?php exit;?>09-07 18:42:02 | 2 | Division by zero               | api/loginregist.php | 3
+<?php exit;?>09-07 18:42:02 | 2 | include(/Applications/XAMPP/xamppfiles/lib/php/php): failed to open stream: No such file or directory | api/loginregist.php | 3
+<?php exit;?>09-07 18:42:02 | 2 | include(): Failed opening 'php' for inclusion (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') | api/loginregist.php | 3
+<?php exit;?>09-07 18:42:02 | 2 | set_error_handler() expects the argument (loginregistControl::errorHandler) to be a valid callback | api/control.php | 57
+<?php exit;?>09-07 18:42:04 | 2 | Division by zero               | api/loginregist.php | 3
+<?php exit;?>09-07 18:42:04 | 2 | include(/Applications/XAMPP/xamppfiles/lib/php/php): failed to open stream: No such file or directory | api/loginregist.php | 3
+<?php exit;?>09-07 18:42:04 | 2 | include(): Failed opening 'php' for inclusion (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') | api/loginregist.php | 3
+<?php exit;?>09-07 18:42:04 | 2 | set_error_handler() expects the argument (loginregistControl::errorHandler) to be a valid callback | api/control.php | 57
+<?php exit;?>09-07 18:42:05 | 2 | Division by zero               | api/loginregist.php | 3
+<?php exit;?>09-07 18:42:05 | 2 | include(/Applications/XAMPP/xamppfiles/lib/php/php): failed to open stream: No such file or directory | api/loginregist.php | 3
+<?php exit;?>09-07 18:42:05 | 2 | include(): Failed opening 'php' for inclusion (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') | api/loginregist.php | 3
+<?php exit;?>09-07 18:42:05 | 2 | set_error_handler() expects the argument (loginregistControl::errorHandler) to be a valid callback | api/control.php | 57
+<?php exit;?>09-07 18:42:06 | 2 | Division by zero               | api/loginregist.php | 3
+<?php exit;?>09-07 18:42:06 | 2 | include(/Applications/XAMPP/xamppfiles/lib/php/php): failed to open stream: No such file or directory | api/loginregist.php | 3
+<?php exit;?>09-07 18:42:06 | 2 | include(): Failed opening 'php' for inclusion (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') | api/loginregist.php | 3
+<?php exit;?>09-07 18:42:06 | 2 | set_error_handler() expects the argument (loginregistControl::errorHandler) to be a valid callback | api/control.php | 57

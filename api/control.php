@@ -101,7 +101,7 @@ class hsshopControl extends Control {
 	/**
 	 * 是否开启调试模式
 	 */
-	protected $debug = true;
+	protected $debug = false;
 	
 	/**
 	 * 检查参数vcode
@@ -144,30 +144,31 @@ class hsshopControl extends Control {
 	 * 检测逻辑
 	 */
 	protected function checkVcode() {
+		//http://www.lxm.com/live_demo/api.php?
+		//act=loginregist&op=homedata&usercode=db98f87a-b1b5-0e88-48db-6dbbe4f2bb7c&
+		//tokencode=13acb42fc41b4dfdfdd7041354eff473&
+		//vcode=13acb42fc41b4dfdfdd7041354eff473364cac0ee584a41c7d9c380651dfca79&
+		//reqtime=1472782904&method=addFeedback
 		$result = false;
-		// $creatorCode = $this->requestData ['creatorCode'];
-		// $tokenCode = $this->requestData ['tokenCode'];
-		// $vcodeD = $this->requestData ['vcode'];
-		// $reqtime = $this->requestData ['reqtime'];
-		// $method = $this->requestData['op'];
 		$creatorCode = APPNAME;
-		$userCode = 'db98f87a-b1b5-0e88-48db-6dbbe4f2bb7c';
-		$tokenCode = '13acb42fc41b4dfdfdd7041354eff473';
-		$vcodeD = '13acb42fc41b4dfdfdd7041354eff473364cac0ee584a41c7d9c380651dfca79';
-		$reqtime = '1472782904';
-		$method = 'addFeedback';
-		if (isset ( $tokenCode ) && isset ( $vcodeD ) && isset ( $vcodeD )) {
+		$userCode = $this->requestData['userid'];
+		$tokenCode = $this->requestData ['tokencode'];
+		$vcodeD = $this->requestData ['vcode'];
+		$reqtime = $this->requestData ['reqtime'];
+		$method = $_GET ['op'];
+		
+		if (isset ( $tokenCode ) && isset ( $vcodeD ) && isset ( $userCode )) {			
 			$vcodeS = $tokenCode . "" . md5 ( $method . "" . APPNAME . "" . md5 ( substr ( $userCode, 0, 6 ) ) );
-			var_dump(md5 ( substr ( $userCode, 0, 6 ) ));
-			var_dump($method . "" . APPNAME . "" . md5 ( substr ( $userCode, 0, 6 ) ));
-			var_dump(md5 ( $method . "" . APPNAME . "" . md5 ( substr ( $userCode, 0, 6 ) ) ));
-			var_dump($tokenCode . "" . md5 ( $method . "" . APPNAME . "" . md5 ( substr ( $userCode, 0, 6 ) ) ));
-			// 2016-09-02 14:59:11.927 BMSQS[98434:765353] userCode 的前六位=db98f8
-			// 2016-09-02 14:59:11.927 BMSQS[98434:765353] md5( userCode 的前六位 )=4429af51474539662bcf0310c72aee07
-			// 2016-09-02 14:59:11.927 BMSQS[98434:765353] “methodName” + params + md5( userCode 的前六位 )=addFeedbackcom.lxm.live4429af51474539662bcf0310c72aee07
-			// 2016-09-02 14:59:11.927 BMSQS[98434:765353] md5( “methodName” + params + md5( userCode 的前六位 )=364cac0ee584a41c7d9c380651dfca79
-			// 2016-09-02 14:59:11.927 BMSQS[98434:765353] token + md5( “methodName” + params + md5( userCode 的前六位 ))=13acb42fc41b4dfdfdd7041354eff473364cac0ee584a41c7d9c380651dfca79
-			
+// 			var_dump(md5 ( substr ( $userCode, 0, 6 ) ));
+// 			var_dump($method . "" . APPNAME . "" . md5 ( substr ( $userCode, 0, 6 ) ));
+// 			var_dump(md5 ( $method . "" . APPNAME . "" . md5 ( substr ( $userCode, 0, 6 ) ) ));
+// 			var_dump($tokenCode . "" . md5 ( $method . "" . APPNAME . "" . md5 ( substr ( $userCode, 0, 6 ) ) ));
+// 			2016-09-02 14:59:11.927 BMSQS[98434:765353] userCode 的前六位=db98f8
+// 			2016-09-02 14:59:11.927 BMSQS[98434:765353] md5( userCode 的前六位 )=4429af51474539662bcf0310c72aee07
+// 			2016-09-02 14:59:11.927 BMSQS[98434:765353] “methodName” + params + md5( userCode 的前六位 )=addFeedbackcom.lxm.live4429af51474539662bcf0310c72aee07
+// 			2016-09-02 14:59:11.927 BMSQS[98434:765353] md5( “methodName” + params + md5( userCode 的前六位 )=364cac0ee584a41c7d9c380651dfca79
+// 			2016-09-02 14:59:11.927 BMSQS[98434:765353] token + md5( “methodName” + params + md5( userCode 的前六位 ))=13acb42fc41b4dfdfdd7041354eff473364cac0ee584a41c7d9c380651dfca79
+					
 			if ($vcodeD == $vcodeS)
 				$result = true;
 		}
